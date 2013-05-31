@@ -1,36 +1,30 @@
-# Ember Quickstart Application
+# Ember Movies
 
-## What is this?
-This application pulls [lineman](https://github.com/testdouble/lineman) & [ember](http://emberjs.com) together and provides a simple
-project shell to get started with Ember development quickly.
-
-The app is cloned from [lineman-ember-template](https://github.com/searls/lineman-ember-template) and adjusted
-so that the Ember application files are in JavaScript rather than CoffeeScript. Please see the original project
-if you would prefer to a base Ember project in CoffeeScript.
+A sample todos-like application using [lineman](https://github.com/testdouble/lineman)
+& [ember](http://emberjs.com).
 
 ## Setup
-If you haven't already done so, first: install [node.js](http://nodejs.org); next, install lineman:
+* If you haven't already done so, first: install [node.js](http://nodejs.org).
+* Next, install lineman:
 
 `$ npm install -g lineman`
 
-To work from this example, just clone it, change into the project directory and run:
+* Clone this project, change into the project directory and run:
 
 ```
 $ npm install
 $ lineman run
 ```
 
-And then visit the page at [localhost:8000](http://localhost:8000) to verify that it works.
+And then visit the page at [localhost:8000](http://localhost:8000) - you should see the application.
 
-## Lineman?
+## Troubleshooting
 
-Lineman is a great project that will:
-  * Watch your application during development for changing files and re-compile/concatenate the files as required.
-  * Run your tests as you change them.
-  * Provide a way to package and deploy your project.
+There is an [outstanding issue](https://github.com/searls/lineman-ember-template/issues/2)
+with the lineman template this project was built on. It can result is no content being rendered on first run.
 
-In other words lineman will support a lot of common JavaScript tasks required while developing fat client JavaScript applications
-without the need for a seperate backend server, such as Rails. However, it will not get in the way should you move to using Rails or similar.
+To fix simply make a trivial edit to any handlebars template and reload the browser. From then on you
+should be fine unless you run `lineman clean` which will cause the issue to re-occur.
 
 You can read all about lineman [here](https://github.com/testdouble/lineman).
 
