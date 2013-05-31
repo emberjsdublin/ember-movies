@@ -1,0 +1,11 @@
+.movieLists{border-top:1px solid #EEE;clear:both;margin:0;}
+.movieLists li{border-bottom:1px solid #EEE;padding:5px;}
+
+.moviesList{border-top:1px solid #EEE;clear:both;margin:0;}
+.moviesList li{border-bottom:1px solid #EEE;overflow:hidden;padding:5px;}
+.moviesList li span{float:left;}
+.moviesList li input{float:right;height:25px;margin:0;width:25px;}
+
+.moviesList li.checked span{color: #999;text-decoration:line-through;}
+
+.movieCount{font-size:12px;font-style:italic;margin-top:15px;}
