@@ -1,9 +1,6 @@
 Movies.Router.map(function () {
-  this.resource('movies', { path: '/' });
+  this.resource('lists', { path: '/' }, function() {
+    this.route('add');
+  });
 });
 
-Movies.MoviesRoute = Ember.Route.extend({
-  model: function () {
-    return Movies.List.find();
-  }
-});
