@@ -1,3 +1,5 @@
-<div class="hello test">
+<h1>Movies</h1>
+
+<div>
   {{outlet}}
 </div>

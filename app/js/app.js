@@ -1,2 +1,2 @@
-window.App = Ember.Application.create();
-App.Store = DS.Store.extend({revision: 12});
+window.Movies = Ember.Application.create();
+// App.Store = DS.Store.extend({revision: 12});
