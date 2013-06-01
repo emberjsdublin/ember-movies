@@ -7,12 +7,11 @@
 <div class="row">
   <div class="large-6 large-offset-3 columns">
     <ul class="movieLists no-bullet">
-      {{#each controller}}
+      {{#each list in controller}}
         <li>
-          {{#linkTo "lists.movies" this}}{{title}}{{/linkTo}}
+          {{#linkTo "lists.movies" list}}{{list.title}}{{/linkTo}}
         </li>
       {{/each}}
     </ul>
   </div>
 </div>
-{{outlet movies}}
