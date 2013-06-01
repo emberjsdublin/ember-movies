@@ -1,19 +1,19 @@
 Movies.ListsAddController = Ember.ArrayController.extend({
   createList: function () {
-    console.log('here2');
-    // Get the todo title set by the "New Todo" text field
+    // Get the list title set by the "New Todo" text field
     var title = this.get('newList');
     if (!title.trim()) { return; }
 
-    // Create the new Todo model
+    // Create the new List model
     var list = Movies.List.createRecord({
-      title: title,
+      title: title
     });
 
-    // Clear the "New Todo" text field
+
+    // // Clear the "New List" text field
     this.set('newList', '');
 
-    // Save the new model
-    list.save();
+    // // Save the new model
+    list.save(function() {});
   }
 });

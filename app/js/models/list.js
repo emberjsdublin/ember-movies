@@ -3,10 +3,10 @@ Movies.List = DS.Model.extend({
   movies: DS.hasMany('Movies.Movie')
 });
 
-// ... additional lines truncated for brevity ...
 Movies.List.FIXTURES = [{
     id: 1,
-    title: 'Robert De Niro Movies'
+    title: 'Robert De Niro Movies',
+    movie_ids: [1, 2]
   }, {
     id: 2,
     title: 'James Cameron Movies'
