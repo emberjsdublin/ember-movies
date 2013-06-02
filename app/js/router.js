@@ -1,7 +1,9 @@
 Movies.Router.map(function () {
-  this.resource('lists', { path: '/' }, function() {
+  this.resource('list', { path: '/list' }, function() {
     this.route('add');
-    this.route('movies', { path: '/:list_id/movies' });
+    this.resource('movies', { path: '/:list_id/movies' }, function() {
+      // No routes yet
+    });
   });
 });
 

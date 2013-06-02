@@ -1,6 +1,5 @@
-Movies.ListsMoviesController = Ember.ObjectController.extend({
+Movies.MoviesController = Ember.ObjectController.extend({
   createMovie: function () {
-
      // Get the movie title set by the 'Add New Movie' text field
     var name = this.get('newMovie');
     if (!name.trim()) { return; }
@@ -16,6 +15,8 @@ Movies.ListsMoviesController = Ember.ObjectController.extend({
 
     // Add movie to our list of movies
     this.get('movies').pushObject(movie);
+
+    this.get('movies').get('store').save();
   },
 
   movieCount: function() {
