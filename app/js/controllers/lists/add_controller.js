@@ -1,3 +1,5 @@
+// TODO: move this to ListsController
+
 Movies.ListsAddController = Ember.ArrayController.extend({
   createList: function () {
     // Get the list title set by the "New Todo" text field
@@ -14,6 +16,6 @@ Movies.ListsAddController = Ember.ArrayController.extend({
     this.set('newList', '');
 
     // // Save the new model
-    list.save(function() {});
+    list.save();
   }
 });
