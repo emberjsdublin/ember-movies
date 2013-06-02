@@ -1,4 +1,7 @@
 Movies.MoviesController = Ember.ObjectController.extend({
+  init: function() {
+    console.log('movies controller');
+  },
   createMovie: function () {
      // Get the movie title set by the 'Add New Movie' text field
     var name = this.get('newMovie');
