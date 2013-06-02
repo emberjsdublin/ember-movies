@@ -1,6 +1,6 @@
 <div class="row">
   <div class="large-6 large-offset-3 columns">
-    <h4 class="text-center">{{title}}({{movieCount}})</h4>
+    <h4 class="text-center">{{title}} (Watched {{seen}} of {{total}})</h4>
     {{view Ember.TextField
       id="right-label"
       placeholder="Add New Movie"
@@ -8,16 +8,16 @@
       action="createMovie"}}
 
       <ul class="moviesList no-bullet">
-        {{#each movie in movies}}
-          <li>
+        {{#each movie in movies itemController="movies"}}
+          <li {{bindAttr class="movie.watched:checked"}}>
             <span class="title">{{movie.name}}</span>
-            <input type="checkbox" />
+            {{view Ember.Checkbox checkedBinding="watched" class="toggle"}}
           </li>
         {{/each}}
       </ul>
 
     <div class="movieCount">
-      <span>TODO movie(s) left</span>
+      <span><strong>{{remaining}}</strong> {{inflection}} left</span>
     </div>
   </div>
 </div>

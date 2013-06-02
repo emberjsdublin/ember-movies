@@ -21,7 +21,22 @@ Movies.MoviesController = Ember.ObjectController.extend({
     this.get('movies').get('store').save();
   },
 
-  movieCount: function() {
+  total: function() {
     return this.get('movies').get('length');
-  }.property('movies.length')
+  }.property('movies.length'),
+
+  remaining: function () {
+    return this.get('movies').filterProperty('watched', false).get('length');
+  }.property('movies.@each.watched'),
+
+  // wanted to use 'watched' has the pope name, but gave:
+  // Uncaught TypeError: Cannot call method 'filterProperty' of undefined
+  seen: function () {
+    return this.get('movies').filterProperty('watched', true).get('length');
+  }.property('movies.@each.watched'),
+
+  inflection: function () {
+    var remaining = this.get('remaining');
+    return remaining === 1 ? 'movie' : 'movies';
+  }.property('remaining')
 });

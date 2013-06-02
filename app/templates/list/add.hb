@@ -4,7 +4,7 @@
       <label for="right-label" class="right inline">List Name:</label>
     </div>
     <div class="small-7 columns">
-      {{view Ember.TextField id="right-label" placeholder="Movie List Name"
+       {{view Ember.TextField id="right-label" placeholder="Movie List Name"
        valueBinding="newList" action="createList"}}
     </div>
     <div class="small-2 columns">
