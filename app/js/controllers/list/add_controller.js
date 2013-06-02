@@ -1,5 +1,3 @@
-// TODO: move this to ListsController
-
 Movies.ListAddController = Ember.ArrayController.extend({
   createList: function () {
     // Get the list title set by the "New Todo" text field

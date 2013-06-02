@@ -1,9 +1,0 @@
-Movies.ListMoviesIndexRoute = Ember.Route.extend({
-  init: function() {
-    console.log('MoviesIndexRoute');
-  },
-  model: function(params) {
-    console.log('params:' + params.list_id);
-    return Movies.List.find(params.list_id);
-  }
-});
