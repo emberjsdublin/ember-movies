@@ -1,7 +1,6 @@
 Movies.MoviesController = Ember.ObjectController.extend({
-  init: function() {
-    console.log('movies controller');
-  },
+  // createMovie() is handled by this controller
+  // because we do not have a movies/new route
   createMovie: function () {
      // Get the movie title set by the 'Add New Movie' text field
     var name = this.get('newMovie');
