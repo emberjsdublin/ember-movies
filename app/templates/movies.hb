@@ -1,11 +1,17 @@
+<!-- We have to add this link we broke the back button when
+we rendered into the application template rather than the default lists
+template -->
+<div class="row">
+  <div class="large-6 large-offset-3 columns">
+  {{#linkTo "index"}}All Lists{{/linkTo}}
+  </div>
+</div>
+
 <div class="row">
   <div class="large-6 large-offset-3 columns">
     <h4 class="text-center">{{title}} (Watched {{seen}} of {{total}})</h4>
-    {{view Ember.TextField
-      id="right-label"
-      placeholder="Add New Movie"
-      valueBinding="newMovie"
-      action="createMovie"}}
+    {{view Ember.TextField id="right-label" placeholder="Add New Movie"
+      valueBinding="newMovie" action="createMovie"}}
 
       <ul class="moviesList no-bullet">
         {{#each movie in movies itemController="movies"}}
