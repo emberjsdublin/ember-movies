@@ -17,6 +17,7 @@ template -->
         {{#each movie in movies itemController="movies"}}
           <li {{bindAttr class="movie.watched:checked"}}>
             <span class="title">{{movie.name}}</span>
+            <!-- No need for a controller functon to handle this -->
             {{view Ember.Checkbox checkedBinding="watched" class="toggle"}}
           </li>
         {{/each}}

@@ -29,8 +29,10 @@ Movies.MoviesController = Ember.ObjectController.extend({
     return this.get('movies').filterProperty('watched', false).get('length');
   }.property('movies.@each.watched'),
 
-  // wanted to use 'watched' has the pope name, but gave:
-  // Uncaught TypeError: Cannot call method 'filterProperty' of undefined
+  // Wanted to use 'watched' but choked, and threw:
+  // Uncaught TypeError: Cannot call method 'filterProperty' of undefined.
+  // This is probably becuase watched is a prop on our model and the controller
+  // proxies model props to the model.
   seen: function () {
     return this.get('movies').filterProperty('watched', true).get('length');
   }.property('movies.@each.watched'),
