@@ -17,7 +17,7 @@ Movies.MoviesController = Ember.ObjectController.extend({
 
     // Add movie to our list of movies
     this.get('movies').pushObject(movie);
-
+    // Save via the store
     this.get('movies').get('store').save();
   },
 
@@ -40,5 +40,17 @@ Movies.MoviesController = Ember.ObjectController.extend({
   inflection: function () {
     var remaining = this.get('remaining');
     return remaining === 1 ? 'movie' : 'movies';
-  }.property('remaining')
+  }.property('remaining'),
+
+  isEditing: false,
+
+  editMovie: function () {
+    this.set('isEditing', true);
+  },
+
+  acceptChanges: function () {
+    this.set('isEditing', false);
+    this.get('model').save(); // throws a promise error
+    this.get('movies').get('store').save();
+  }
 });

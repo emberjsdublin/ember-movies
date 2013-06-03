@@ -6,6 +6,11 @@ describe('Movies.MoviesController', function() {
     });
   });
 
+  afterEach(function() {
+    controller.destroy();
+    // /Em.run.sync();
+  });
+
   it ('sets a new list name', function() {
     controller.set('newMovie', 'new movie');
     expect(controller.get('newMovie')).toBe('new movie');

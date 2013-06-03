@@ -4,6 +4,7 @@
 .moviesList{border-top:1px solid #EEE;clear:both;margin:0;}
 .moviesList li{border-bottom:1px solid #EEE;overflow:hidden;padding:5px;}
 .moviesList li span{float:left;}
+.moviesList li .edit{float:right;height:25px;margin:0;width:100%;}
 .moviesList li input{float:right;height:25px;margin:0;width:25px;}
 
 .moviesList li.checked span{color: #999;text-decoration:line-through;}

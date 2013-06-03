@@ -16,9 +16,14 @@ template -->
       <ul class="moviesList no-bullet">
         {{#each movie in movies itemController="movies"}}
           <li {{bindAttr class="movie.watched:checked"}}>
-            <span class="title">{{movie.name}}</span>
-            <!-- No need for a controller functon to handle this -->
-            {{view Ember.Checkbox checkedBinding="watched" class="toggle"}}
+            {{#if isEditing}}
+              <!-- This really does seem like magic :) -->
+              {{view Movies.EditMovieView valueBinding="movie.name"}}
+            {{else}}
+              <!-- No need for a controller functon to handle this -->
+              {{view Ember.Checkbox checkedBinding="watched" class="toggle"}}
+              <span class='title' {{action "editMovie" on="doubleClick"}}>{{movie.name}}</span>
+            {{/if}}
           </li>
         {{/each}}
       </ul>
