@@ -14,17 +14,16 @@ template -->
       valueBinding="newMovie" action="createMovie"}}
 
       <ul class="moviesList no-bullet">
-        {{#each movie in movies itemController="movies"}}
-          <li {{bindAttr class="movie.watched:checked"}}> <!-- this seems to lose it's bindings -->
-            {{movie.watched}}
+        {{#each mov in movies itemController="movies"}}
+          <li {{bindAttr class="mov.watched:checked"}}> <!-- this seems to lose it's marbles/bindings if I change local mov to movie -->
             {{#if isEditing}}
-              {{view Movies.EditMovieView valueBinding="movie.name"}}
+              {{view Movies.EditMovieView valueBinding="mov.name"}}
             {{else}}
               <!-- Problem below is that the bindAttr is uni-directional -->
-              <!-- <input type='checkbox' {{bindAttr checked="movie.watched"}} {{action 'toggleWatched' movie movie.watched}} /> -->
-              <!-- Using custom view -->
-              {{view Movies.ToggleWatchedView checkedBinding="movie.watched" contentBinding="movie"}}
-              <span class='title' {{action "editMovie" on="doubleClick"}}>{{movie.name}}</span>
+              <!-- <input type='checkbox' {{bindAttr checked="mov.watched"}} {{action 'toggleWatched' movie movie.watched}} /> -->
+              <!-- Using custom view becuase we cannot bind to the model directly -->
+              {{view Movies.ToggleWatchedView checkedBinding="mov.watched" contentBinding="mov"}}
+              <span class='title' {{action "editMovie" on="doubleClick"}}>{{mov.name}}</span>
             {{/if}}
           </li>
         {{/each}}
