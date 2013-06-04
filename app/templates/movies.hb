@@ -15,13 +15,14 @@ template -->
 
       <ul class="moviesList no-bullet">
         {{#each movie in movies itemController="movies"}}
-          <li {{bindAttr class="movie.watched:checked"}}>
+          <li {{bindAttr class="movie.watched:checked"}}> <!-- this seems to lose it's bindings -->
             {{#if isEditing}}
-              <!-- This really does seem like magic :) -->
               {{view Movies.EditMovieView valueBinding="movie.name"}}
             {{else}}
-              <!-- No need for a controller functon to handle this -->
-              {{view Ember.Checkbox checkedBinding="watched" class="toggle"}}
+              <!-- Problem below is that the bindAttr is uni-directional -->
+              <!-- <input type='checkbox' {{bindAttr checked="movie.watched"}} {{action 'toggleWatched' movie movie.watched}} /> -->
+              <!-- Using custom view -->
+              {{view Movies.ToggleWatchedView checkedBinding="movie.watched" contentBinding="movie"}}
               <span class='title' {{action "editMovie" on="doubleClick"}}>{{movie.name}}</span>
             {{/if}}
           </li>

@@ -1,9 +1,11 @@
 describe('MoviesView', function() {
   var controller;
   beforeEach(function() {
+    $('.movieLists').empty();
     controller = Movies.MoviesController.create({
       model: Movies.List.createRecord({title: 'test list'})
     });
+    Em.run.sync();
   });
 
   afterEach(function() {
@@ -27,7 +29,7 @@ describe('MoviesView', function() {
     });
 
     it ('shows 10 movies', function() {
-      expect($('.moviesList li').length).toEqual(10);
+      expect($('.title').length).toEqual(10);
     });
   });
 });

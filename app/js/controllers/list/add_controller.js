@@ -12,9 +12,6 @@ Movies.ListAddController = Ember.ArrayController.extend({
 
     // // Clear the "New List" text field
     this.set('newList', '');
-
-    // // Save the new model
-    list.save();
-    App.store.commit();
+    this.get('store').commit();
   }
 });

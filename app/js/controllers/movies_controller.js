@@ -12,13 +12,17 @@ Movies.MoviesController = Ember.ObjectController.extend({
       watched: false
     });
 
-    // // Clear the 'Add New Movie' text field
+    // Clear the 'Add New Movie' text field
     this.set('newMovie', '');
 
     // Add movie to our list of movies
     this.get('movies').pushObject(movie);
-    // Save via the store
-    this.get('movies').get('store').save();
+    this.get('model').save();
+    this.get('store').commit();
+  },
+
+  saveWatched: function(movie) {
+    this.get('store').commit();
   },
 
   total: function() {
@@ -50,7 +54,6 @@ Movies.MoviesController = Ember.ObjectController.extend({
 
   acceptChanges: function () {
     this.set('isEditing', false);
-    this.get('model').save(); // throws a promise error
-    this.get('movies').get('store').save();
+    this.get('store').commit();
   }
 });

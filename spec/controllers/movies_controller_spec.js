@@ -4,11 +4,11 @@ describe('Movies.MoviesController', function() {
     controller = Movies.MoviesController.create({
       model: Movies.List.createRecord({title: 'empty list'})
     });
+    Em.run.sync();
   });
 
   afterEach(function() {
     controller.destroy();
-    // /Em.run.sync();
   });
 
   it ('sets a new list name', function() {
