@@ -2,9 +2,9 @@ describe('Movies.MoviesController', function() {
   var controller;
   beforeEach(function() {
     controller = Movies.MoviesController.create({
-      model: Movies.List.createRecord({title: 'empty list'})
+      model: Movies.List.createRecord({title: 'empty list'}),
+      store: jasmine.createSpyObj('store', ['commit'])
     });
-    Em.run.sync();
   });
 
   afterEach(function() {

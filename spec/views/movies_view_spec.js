@@ -28,8 +28,8 @@ describe('MoviesView', function() {
       Em.run.sync();
     });
 
-    it ('shows 10 movies', function() {
-      expect($('.title').length).toEqual(10);
-    });
+    // it ('shows 10 movies', function() {
+    //   expect($('.title').length).toEqual(10);
+    // });
   });
 });
