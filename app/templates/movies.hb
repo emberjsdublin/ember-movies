@@ -19,9 +19,7 @@ template -->
             {{#if isEditing}}
               {{view Movies.EditMovieView valueBinding="mov.name"}}
             {{else}}
-              <!-- Problem below is that the bindAttr is uni-directional -->
-              <!-- <input type='checkbox' {{bindAttr checked="mov.watched"}} {{action 'toggleWatched' movie movie.watched}} /> -->
-              <!-- Using custom view becuase we cannot bind to the model directly -->
+              <!-- Using custom view becuase we cannot bind to the model.movies with regular Checkbox -->
               {{view Movies.ToggleWatchedView checkedBinding="mov.watched" contentBinding="mov"}}
               <span class='title' {{action "editMovie" on="doubleClick"}}>{{mov.name}}</span>
             {{/if}}
