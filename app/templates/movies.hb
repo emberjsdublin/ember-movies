@@ -1,6 +1,9 @@
-<!-- We have to add this link we broke the back button when
+<!--
+We have to add this link as we broke the back button when
 we rendered into the application template rather than the default lists
-template -->
+template. This seems to be something to do witht he fact that movies are
+nested resources but we are not displaying them as such.
+-->
 <div class="row">
   <div class="large-6 large-offset-3 columns">
   {{#linkTo "index"}}All Lists{{/linkTo}}
