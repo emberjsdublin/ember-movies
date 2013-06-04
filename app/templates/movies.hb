@@ -16,6 +16,7 @@ template -->
       <ul class="moviesList no-bullet">
         {{#each movie in movies itemController="movies"}}
           <li {{bindAttr class="movie.watched:checked"}}> <!-- this seems to lose it's bindings -->
+            {{movie.watched}}
             {{#if isEditing}}
               {{view Movies.EditMovieView valueBinding="movie.name"}}
             {{else}}
