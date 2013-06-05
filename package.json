@@ -1,15 +1,19 @@
 {
   "name": "ember-movies",
-  "title": "Everyone likes movies.",
+  "title": "Ember Movies.",
   "version": "0.0.1",
   "private": true,
   "author": {
     "name": "Ciaran Archer",
-    "company": "Ember Dublin."
+    "company": "Ember Dublin User Group."
   },
   "dependencies": {
     "grunt-ember-handlebars": "0.6.0",
     "underscore": "1.4.4",
     "underscore": "0.7.0"
+  },
+  "engines": {
+    "node": "~>0.10.5",
+    "npm": "~>1.2.18"
   }
 }
