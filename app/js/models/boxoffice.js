@@ -1,7 +1,19 @@
 Movies.Boxoffice = Em.Object.extend({
-  movies: null,
+  boxOfficeMovies: null,
 
   init: function() {
-    this.set('movies', 'here are the movies!');
+    var movies = [];
+
+    model = this;
+    jQuery.ajax("/api/movies/boxoffice", {
+      type: 'GET',
+      success: function(json) {
+        _.each(json.movies, function(movie) {
+          movies.push({title: movie.title, year: movie.year});
+        });
+
+        model.set('boxOfficeMovies', movies);
+      }
+    });
   }
 });

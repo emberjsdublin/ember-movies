@@ -5,6 +5,10 @@
   </div>
 </div>
 
-{{#linkTo "boxoffice"}}Box office{{/linkTo}}<br/>
+<div class="row">
+  <div class="large-6 large-offset-3 columns">
+  {{#linkTo "boxoffice"}}Box office{{/linkTo}}<br/>
+  </div>
+</div>
 
 {{outlet}}

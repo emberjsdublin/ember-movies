@@ -1,7 +1,7 @@
 <!--
 We have to add this link as we broke the back button when
 we rendered into the application template rather than the default lists
-template. This seems to be something to do witht he fact that movies are
+template. This seems to be something to do with the fact that movies are
 nested resources but we are not displaying them as such.
 -->
 <div class="row">
