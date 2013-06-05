@@ -5,4 +5,6 @@
   </div>
 </div>
 
+{{#linkTo "boxoffice"}}Box office{{/linkTo}}<br/>
+
 {{outlet}}
