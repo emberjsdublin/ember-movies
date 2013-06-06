@@ -1,18 +1,15 @@
-<div class="row">
-  <div class="large-6 large-offset-3 columns">
-    {{#linkTo "list.add" classNames="button small right"}}Add New List{{/linkTo}}
-  </div>
-</div>
-{{outlet}}
-<div class="row">
-  <div class="large-6 large-offset-3 columns">
-    <ul class="movieLists no-bullet">
-      {{#each list in controller}}
-        <li>
-          {{#linkTo "movies.index" list}}{{list.title}}{{/linkTo}}
-        </li>
-      {{/each}}
-    </ul>
-  </div>
+<div class="actionBar">
+  {{#linkTo "list.add" classNames="btn btn-primary btn-small addButton"}}Add New List{{/linkTo}}
 </div>
 
+{{outlet}}
+
+<ul class="lists">
+  <li>{{#linkTo "boxoffice"}}Box office{{/linkTo}}</li>
+
+  {{#each list in controller}}
+    <li>
+      {{#linkTo "movies.index" list}}{{list.title}}{{/linkTo}}
+    </li>
+  {{/each}}
+</ul>
