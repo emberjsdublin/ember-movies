@@ -1,4 +1,6 @@
-{{#linkTo "list.add" classNames="btn btn-success addButton"}}Add New List{{/linkTo}}
+<div class="actionBar">
+  {{#linkTo "list.add" classNames="btn btn-primary btn-small addButton"}}Add New List{{/linkTo}}
+</div>
 
 {{outlet}}
 

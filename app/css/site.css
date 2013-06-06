@@ -14,11 +14,18 @@
 
 body, html{background:#F0F0F0;}
 
-#mainContent{background:#FFF;border:1px solid #78A300;margin-bottom:30px;margin-top:30px;}
+#mainContent{background:#FFF;border:1px solid #78A300;border-radius:5px;margin-bottom:30px;margin-top:30px;overflow:hidden;}
 #mainContent .page-header{background:#78A300;margin:0;padding:10px;}
 #mainContent .page-header h1, #mainContent .page-header h1 a{color:#FFF;margin:0;text-shadow:1px 1px 1px #4B6600;}
 
-.addButton{display:block;float:right;margin-bottom:10px;}
+.actionBar{background:#EEE;border-bottom:1px solid #CCC;margin-bottom:10px;overflow:hidden;padding:3px;}
+.actionBar .backLink{color:#333;float:left;font-style:italic;font-weight:bold;text-shadow:1px 1px 1px #FFF;}
+
+.addButton{display:block;float:right;}
+
+.addList{margin:10px;overflow:hidden;}
+.addList label{float:left;line-height:30px;margin:0 5px 0 0;}
+.addList input{margin:0;}
 
 .lists{border-top:1px solid #EEE;clear:both;list-style:none;margin:0;padding:0;}
 .lists li{border-bottom:1px solid #EEE;padding:5px;}
@@ -26,12 +33,16 @@ body, html{background:#F0F0F0;}
 
 .list{}
 .list h4{margin-bottom:15px;}
+.list ol{border-top:1px solid #EEE;clear:both;list-style-position:inside;margin:0;padding:0;}
 .list ul{border-top:1px solid #EEE;clear:both;list-style:none;margin:0;padding:0;}
-.list li{border-bottom:1px solid #EEE;padding:5px;overflow:hidden;}
-.list li .title{float:left;font-weight:bold;}
+.list li{border-bottom:1px solid #EEE;padding:5px;}
+.list li .title{font-weight:bold;}
 .list li input[type=checkbox]{float:right;}
+.list li input[type=text]{margin:0;}
 
 .list li.checked{}
 .list li.checked .title{color: #999;font-style:italic;text-decoration: line-through;}
 
-.list .count{font-size:13px;font-style:italic;margin-top:10px;}
+.list .count{font-size:13px;font-style:italic;margin:10px;text-align:right;}
+
+#addMovie{margin:10px;}

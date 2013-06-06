@@ -5,12 +5,14 @@ template. This seems to be something to do with the fact that movies are
 nested resources but we are not displaying them as such.
 -->
 
-{{#linkTo "index"}}All Lists{{/linkTo}}
+<div class="actionBar">
+  {{#linkTo "index" classNames="backLink"}}&laquo; All Lists{{/linkTo}}
+</div>
 
 <div class="list">
   <h4 class="text-center">{{title}} (Watched {{seen}} of {{total}})</h4>
 
-  {{view Ember.TextField id="right-label" placeholder="Add New Movie"
+  {{view Ember.TextField id="addMovie" placeholder="Add New Movie"
       valueBinding="newMovie" action="createMovie"}}
 
   <ul>
