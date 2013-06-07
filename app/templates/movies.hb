@@ -16,13 +16,12 @@ nested resources but we are not displaying them as such.
 
   <ul>
 
-    {{#each movies}}
+    {{#each movies itemController="movie"}}
       <li {{bindAttr class="watched:checked"}}>
         {{#if isEditing}}
           {{view Movies.EditMovieView valueBinding="name"}}
         {{else}}
-          <!-- Using custom view becuase we cannot bind to the model.movies with regular Checkbox -->
-          {{view Movies.ToggleWatchedView checkedBinding="watched"}}
+          {{view Ember.Checkbox checkedBinding="watched" class="toggle"}}
           <span class='title' {{action "edit" on="doubleClick"}}>{{name}}</span>
         {{/if}}
       </li>
