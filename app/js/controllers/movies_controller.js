@@ -1,9 +1,4 @@
 Movies.MoviesController = Ember.ObjectController.extend({
-  isEditing: false,
-
-  edit: function () {
-    this.set('isEditing', true);
-  },
 
   create: function () {
      // Get the movie title set by the 'Add New Movie' text field
@@ -22,10 +17,6 @@ Movies.MoviesController = Ember.ObjectController.extend({
     // Add movie to our list of movies
     this.get('movies').pushObject(movie);
     this.get('model').save();
-    this.get('store').commit();
-  },
-
-  saveWatched: function(movie) {
     this.get('store').commit();
   },
 
@@ -48,14 +39,6 @@ Movies.MoviesController = Ember.ObjectController.extend({
   inflection: function () {
     var remaining = this.get('remaining');
     return remaining === 1 ? 'movie' : 'movies';
-  }.property('remaining'),
+  }.property('remaining')
 
-
-
-
-
-  acceptChanges: function () {
-    this.set('isEditing', false);
-    this.get('store').commit();
-  }
 });
