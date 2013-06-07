@@ -12,21 +12,22 @@ nested resources but we are not displaying them as such.
 <div class="list">
   <h4 class="text-center">{{title}} (Watched {{seen}} of {{total}})</h4>
 
-  {{view Ember.TextField id="addMovie" placeholder="Add New Movie"
-      valueBinding="newMovie" action="createMovie"}}
+  {{view Ember.TextField id="addMovie" placeholder="Add New Movie" valueBinding="newMovie" action="create"}}
 
   <ul>
-    {{#each mov in movies itemController="movies"}}
-      <li {{bindAttr class="mov.watched:checked"}}> <!-- this seems to lose it's marbles/bindings if I change local mov to movie -->
+
+    {{#each movies}}
+      <li {{bindAttr class="watched:checked"}}>
         {{#if isEditing}}
-          {{view Movies.EditMovieView valueBinding="mov.name"}}
+          {{view Movies.EditMovieView valueBinding="name"}}
         {{else}}
           <!-- Using custom view becuase we cannot bind to the model.movies with regular Checkbox -->
-          {{view Movies.ToggleWatchedView checkedBinding="mov.watched" contentBinding="mov"}}
-          <span class='title' {{action "editMovie" on="doubleClick"}}>{{mov.name}}</span>
+          {{view Movies.ToggleWatchedView checkedBinding="watched"}}
+          <span class='title' {{action "edit" on="doubleClick"}}>{{name}}</span>
         {{/if}}
       </li>
     {{/each}}
+
   </ul>
 
   <div class="count">

@@ -16,10 +16,10 @@ describe('Movies.MoviesController', function() {
     expect(controller.get('newMovie')).toBe('new movie');
   });
 
-  it('createMovie stores a new movie', function() {
+  it('.create stores a new movie', function() {
     controller.set('newMovie', 'new movie');
 
-    controller.createMovie();
+    controller.create();
     // Note how the controller proxies to the model for the 'movies' prop
     var models = controller.get('movies');
     expect(models.get('length')).toBe(1);
@@ -32,7 +32,7 @@ describe('Movies.MoviesController', function() {
 
     it('increments when movies are added', function() {
       controller.set('newMovie', 'new movie');
-      controller.createMovie();
+      controller.create();
 
       expect(controller.get('total')).toBe(1);
     });
@@ -41,9 +41,9 @@ describe('Movies.MoviesController', function() {
   describe ('#remaining', function() {
     beforeEach(function() {
       controller.set('newMovie', 'movie 1');
-      controller.createMovie();
+      controller.create();
       controller.set('newMovie', 'movie 2');
-      controller.createMovie();
+      controller.create();
     });
     it('returns the number of movies left to watch', function() {
       expect(controller.get('remaining')).toBe(2);
@@ -58,9 +58,9 @@ describe('Movies.MoviesController', function() {
   describe ('#seen', function() {
     beforeEach(function() {
       controller.set('newMovie', 'movie 1');
-      controller.createMovie();
+      controller.create();
       controller.set('newMovie', 'movie 2');
-      controller.createMovie();
+      controller.create();
     });
     it('returns the number of movies watched', function() {
       expect(controller.get('seen')).toBe(0);
@@ -81,7 +81,7 @@ describe('Movies.MoviesController', function() {
 
     it('returns "movie" as a singular', function() {
       controller.set('newMovie', 'movie 1');
-      controller.createMovie();
+      controller.create();
       expect(controller.get('inflection')).toEqual('movie');
     });
   });

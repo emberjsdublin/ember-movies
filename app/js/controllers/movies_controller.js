@@ -1,7 +1,11 @@
 Movies.MoviesController = Ember.ObjectController.extend({
-  // createMovie() is handled by this controller
-  // because we do not have a movies/new route
-  createMovie: function () {
+  isEditing: false,
+
+  edit: function () {
+    this.set('isEditing', true);
+  },
+
+  create: function () {
      // Get the movie title set by the 'Add New Movie' text field
     var name = this.get('newMovie');
     if (!name.trim()) { return; }
@@ -46,11 +50,9 @@ Movies.MoviesController = Ember.ObjectController.extend({
     return remaining === 1 ? 'movie' : 'movies';
   }.property('remaining'),
 
-  isEditing: false,
 
-  editMovie: function () {
-    this.set('isEditing', true);
-  },
+
+
 
   acceptChanges: function () {
     this.set('isEditing', false);
