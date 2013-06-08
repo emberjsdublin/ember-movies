@@ -21,8 +21,9 @@ nested resources but we are not displaying them as such.
         {{#if isEditing}}
           {{view Movies.EditMovieView valueBinding="name"}}
         {{else}}
-          {{view Ember.Checkbox checkedBinding="watched" class="toggle"}}
           <span class='title' {{action "edit" on="doubleClick"}}>{{name}}</span>
+          <span class='notes'>{{#linkTo "notes.index" this}}Notes{{/linkTo}}</span>
+          {{view Ember.Checkbox checkedBinding="watched" class="toggle"}}
         {{/if}}
       </li>
     {{/each}}
