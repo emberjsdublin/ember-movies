@@ -1,1 +1,3 @@
-window.Movies = Ember.Application.create();
+window.Movies = Ember.Application.create({
+  LOG_TRANSITIONS: true
+});
