@@ -1,10 +1,7 @@
 Movies.NotesController = Ember.ObjectController.extend({
-
   create: function () {
     var text = this.get('newNote');
     if (!name.trim()) { return; }
-
-    console.log('text: ' +  text);
 
     var note = Movies.Note.createRecord({
       text: text
