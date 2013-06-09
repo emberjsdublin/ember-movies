@@ -1,7 +1,3 @@
-<div class="actionBar">
-  {{#linkTo "lists" classNames="backLink"}}&laquo; All Lists{{/linkTo}}
-</div>
-
 <div class="list">
   <h4 class="text-center">{{title}} (Watched {{watched}} of {{total}})</h4>
 
