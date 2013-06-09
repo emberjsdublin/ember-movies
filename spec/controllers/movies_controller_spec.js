@@ -1,7 +1,7 @@
 describe('Movies.MoviesController', function() {
   var controller;
   beforeEach(function() {
-    controller = Movies.MoviesController.create({
+    controller = Movies.ListController.create({
       model: Movies.List.createRecord({title: 'empty list'}),
       store: jasmine.createSpyObj('store', ['commit'])
     });
@@ -55,7 +55,7 @@ describe('Movies.MoviesController', function() {
     });
   });
 
-  describe ('#seen', function() {
+  describe ('#watched', function() {
     beforeEach(function() {
       controller.set('newMovie', 'movie 1');
       controller.create();
@@ -63,14 +63,14 @@ describe('Movies.MoviesController', function() {
       controller.create();
     });
     it('returns the number of movies watched', function() {
-      expect(controller.get('seen')).toBe(0);
+      expect(controller.get('watched')).toBe(0);
     });
 
     it('increments when movies are watched', function() {
       controller.get('movies').forEach(function(item, index, enumerable) {
         if (index === 0) item.set('watched', true);
       });
-      expect(controller.get('seen')).toBe(1);
+      expect(controller.get('watched')).toBe(1);
     });
   });
 
