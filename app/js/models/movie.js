@@ -3,5 +3,5 @@ Movies.Movie = DS.Model.extend({
   watched: DS.attr('boolean'),
   list: DS.belongsTo('Movies.List'),
   // TODO: Notes Demo Step #2
-  notes: DS.hasMany('Movies.Note')
+  // notes: DS.hasMany('Movies.Note')
 });

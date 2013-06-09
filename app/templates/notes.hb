@@ -1,8 +1,9 @@
-<div class="list">
-  {{!--  TODO: Notes Demo Step #6 --}}
+{{!--  TODO: Notes Demo Step #6 --}}
+{{!-- <div class="list">
   <h4 class="text-center">Notes for '{{name}}'</h4>
 
-  {{!-- TODO: Notes Demo Step #9 --}}
+  {{!-- TODO: Notes Demo Step #10 --}}
+  {{!--
   <p class="text-center">
     {{view Ember.TextArea
       cols="100"
@@ -14,18 +15,18 @@
   </p>
   <p class="text-center">
     <button {{action create}}>Add</button>
-  </p>
+  </p> --}}
 
 
-  {{!-- TODO: Notes Demo Step #11 --}}
-  <ul>
+  {{!-- TODO: Notes Demo Step #12 --}}
+  {{!-- <ul>
   {{#each notes}}
     <li>{{text}}</li>
   {{/each}}
-  </ul>
+  </ul> --}}
 
-  {{!-- TODO: Notes Demo Step #8 --}}
-  <div class="count">
+  {{!-- TODO: Notes Demo Step #9 --}}
+  {{!-- <div class="count">
     <span><strong>{{count}}</strong> note(s) made</span>
-  </div>
-</div>
+  </div> --}}
+</div> --}}

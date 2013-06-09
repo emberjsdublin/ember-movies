@@ -1,14 +1,16 @@
 // TODO: Notes Demo Step #7
-Movies.NotesController = Ember.ObjectController.extend({
-  // TODO: Notes Demo Step #8
-  count: function() {
-    return this.get('notes').get('length');
-  }.property('notes.length'),
+//Movies.NotesController = Ember.ObjectController.extend({
 
-  // TODO: Notes Demo Step #10
+  // TODO: Notes Demo Step #8
+  /* count: function() {
+    return this.get('notes').get('length');
+  }.property('notes.length')*/ /*,
+
+  // TODO: Notes Demo Step #11
+
   create: function () {
-    var text = this.get('newNote');
-    if (!name.trim()) { console.log('no note text'); return; }
+    var text = this.get('newNote') || '';
+    if (!text.trim()) { return; }
 
     var note = Movies.Note.createRecord({
       text: text
@@ -19,5 +21,5 @@ Movies.NotesController = Ember.ObjectController.extend({
     this.get('notes').pushObject(note);
     this.get('model').save();
     this.get('store').commit();
-  }
-});
+  } */
+//});

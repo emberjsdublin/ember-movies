@@ -13,7 +13,7 @@
           {{view Ember.Checkbox checkedBinding="watched" class="toggle"}}
           <span class='title' {{action "edit" on="doubleClick"}}>{{name}}</span>
           {{!--  TODO: Notes Demo Step #3 --}}
-          <span class='notes'>{{#linkTo "notes" this}}Notes{{/linkTo}}</span>
+          {{!-- <span class='notes'>{{#linkTo "notes" this}}Notes{{/linkTo}}</span> --}}
         {{/if}}
       </li>
     {{/each}}
