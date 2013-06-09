@@ -13,7 +13,3 @@
     </li>
   {{/each}}
 </ul>
-
-
-<hr />
-{{outlet}}
