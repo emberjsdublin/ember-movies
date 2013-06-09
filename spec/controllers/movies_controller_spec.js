@@ -1,4 +1,4 @@
-describe('Movies.MoviesController', function() {
+describe('Movies.ListController', function() {
   var controller;
   beforeEach(function() {
     controller = Movies.ListController.create({
