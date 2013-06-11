@@ -1,10 +1,10 @@
 // TODO: Notes Demo Step #7
-//Movies.NotesController = Ember.ObjectController.extend({
+Movies.NotesController = Ember.ObjectController.extend({
 
   // TODO: Notes Demo Step #8
-  /* count: function() {
+  count: function() {
     return this.get('notes').get('length');
-  }.property('notes.length')*/ /*,
+  }.property('notes.length'),
 
   // TODO: Notes Demo Step #11
 
@@ -21,5 +21,5 @@
     this.get('notes').pushObject(note);
     this.get('model').save();
     this.get('store').commit();
-  } */
-//});
+  }
+});
