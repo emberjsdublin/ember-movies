@@ -12,9 +12,11 @@ new Ember [Getting Started](http://emberjs.com/guides/getting-started/) guide. H
 there are some differences outlined below.
 
 ### Models
-* Ember Movies has proper one-to-many relationship
+* Ember Movies has some one-to-many relationship
   * A list has many movies.
   * A movie belongs to one list.
+  * A movie can have many notes.
+  * A note belongs to one movie.
 
 This makes editing the nested set of movies for a given list a little different than for the regular Todos application.
 
@@ -22,10 +24,6 @@ This makes editing the nested set of movies for a given list a little different 
   * The model relationships above are made possible through the use of Ember Data.
   * The [local storage adaptor](https://github.com/rpflorence/ember-localstorage-adapter) is used.
   * Fixtures are not used.
-
-### Nested Resources
-  * Since movies are a property of a list, they are treated as nested resources for routing purposes.
-  * This is also unlike the Todos application, and leads to some side-effects.
 
 ### Testing
   * Tests for one of the more complex controllers is included.
@@ -55,5 +53,5 @@ $ lineman spec
 ## Lineman
 
 You can read all about lineman [here](https://github.com/testdouble/lineman). If you are looking for a
-empty lineman-ember template then check out [this](https://github.com/searls/lineman-ember-template/ ) project.
+empty lineman-ember template then check out [this](https://github.com/emberjsdublin/lineman-ember-template) project.
 
